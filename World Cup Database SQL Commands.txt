@@ -1,0 +1,102 @@
+------------------------------------------------------------
+1. Create Database and connect to it
+------------------------------------------------------------
+psql --username=freecodecamp --dbname=postgres;
+
+CREATE DATABASE worldcup;
+
+\c worldcup;
+
+------------------------------------------------------------
+2. Create tables as required conditions
+------------------------------------------------------------
+CREATE TABLE teams (
+	team_id SERIAL NOT NULL,
+	name VARCHAR(30) UNIQUE NOT NULL
+);
+
+CREATE TABLE games (
+	game_id SERIAL NOT NULL,
+	year INT NOT NULL,
+	round VARCHAR(30) NOT NULL,
+	winner_id INT NOT NULL, 
+	opponent_id INT NOT NULL,
+	winner_goals INT NOT NULL,
+	opponent_goals INT NOT NULL
+);
+
+------------------------------------------------------------
+3. Fill the tables as required data conditions
+------------------------------------------------------------
+INSERT INTO teams(team_id, name) VALUES(101, 'France');
+INSERT INTO teams(team_id, name) VALUES(102, 'Belgium');
+INSERT INTO teams(team_id, name) VALUES(103, 'Croatia');
+INSERT INTO teams(team_id, name) VALUES(104, 'England');
+INSERT INTO teams(team_id, name) VALUES(105, 'Sweden');
+INSERT INTO teams(team_id, name) VALUES(106, 'Brazil');
+INSERT INTO teams(team_id, name) VALUES(107, 'Croatia');
+INSERT INTO teams(team_id, name) VALUES(108, 'Russia');
+INSERT INTO teams(team_id, name) VALUES(109, 'Uruguay');
+INSERT INTO teams(team_id, name) VALUES(110, 'Germany');
+INSERT INTO teams(team_id, name) VALUES(111, 'Netherlands');
+INSERT INTO teams(team_id, name) VALUES(112, 'Argentina');
+INSERT INTO teams(team_id, name) VALUES(113, 'Colombia');
+INSERT INTO teams(team_id, name) VALUES(114, 'Costa Rica');
+INSERT INTO teams(team_id, name) VALUES(115, 'Switzerland');
+INSERT INTO teams(team_id, name) VALUES(116, 'Japan');
+INSERT INTO teams(team_id, name) VALUES(117, 'Mexico');
+INSERT INTO teams(team_id, name) VALUES(118, 'Denmark');
+INSERT INTO teams(team_id, name) VALUES(119, 'Spain');
+INSERT INTO teams(team_id, name) VALUES(120, 'Protugal');
+INSERT INTO teams(team_id, name) VALUES(121, 'Chile');
+INSERT INTO teams(team_id, name) VALUES(122, 'Nigeria');
+INSERT INTO teams(team_id, name) VALUES(123, 'Algeria');
+INSERT INTO teams(team_id, name) VALUES(124, 'Greece');
+INSERT INTO teams(team_id, name) VALUES(125, 'United States');
+
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(1, 2018, 'Final', 101, 103, 4, 2);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(2, 2018, 'Third Place', 102, 104, 2, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(3, 2018, 'Semi-Final', 103, 104, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(4, 2018, 'Semi-Final', 101, 102, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(5, 2018, 'Quarter-Final', 103, 108, 3, 2);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(6, 2018, 'Quarter-Final', 104, 105, 2, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(7, 2018, 'Quarter-Final', 102, 106, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(8, 2018, 'Quarter-Final', 101, 109, 2, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(9, 2018, 'Eighth-Final', 104, 113, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(10, 2018, 'Eighth-Final', 105, 115, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(11, 2018, 'Eighth-Final', 102, 116, 3, 2);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(12, 2018, 'Eighth-Final', 106, 117, 2, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(13, 2018, 'Eighth-Final', 103, 118, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(14, 2018, 'Eighth-Final', 108, 119, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(15, 2018, 'Eighth-Final', 109, 120, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(16, 2018, 'Eighth-Final', 101, 112, 4, 3);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(17, 2014, 'Final', 110, 112, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(18, 2014, 'Third Place', 111, 106, 3, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(19, 2014, 'Semi-Final', 112, 111, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(20, 2014, 'Semi-Final', 110, 106, 7, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(21, 2014, 'Quarter-Final', 111, 114, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(22, 2014, 'Quarter-Final', 112, 102, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(23, 2014, 'Quarter-Final', 106, 113, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(24, 2014, 'Quarter-Final', 110, 101, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(25, 2014, 'Eighth-Final', 106, 121, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(26, 2014, 'Eighth-Final', 113, 109, 2, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(27, 2014, 'Eighth-Final', 101, 122, 2, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(28, 2014, 'Eighth-Final', 110, 123, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(29, 2014, 'Eighth-Final', 111, 117, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(30, 2014, 'Eighth-Final', 114, 124, 2, 1);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(31, 2014, 'Eighth-Final', 112, 115, 1, 0);
+INSERT INTO games(game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES(32, 2014, 'Eighth-Final', 102, 125, 2, 1);
+
+------------------------------------------------------------
+4. Primary Key and Foreign Key assignment
+------------------------------------------------------------
+ALTER TABLE teams ADD PRIMARY KEY (team_id);
+ALTER TABLE games ADD PRIMARY KEY (game_id);
+
+ALTER TABLE games ADD FOREIGN KEY (winner_id) REFERENCES teams (team_id);
+ALTER TABLE games ADD FOREIGN KEY (opponent_id) REFERENCES teams (team_id);
+
+------------------------------------------------------------
+5. Compact sql db queries into universe.sql file
+------------------------------------------------------------
+pg_dump -cC --inserts -U freecodecamp worldcup > worldcup.sql
